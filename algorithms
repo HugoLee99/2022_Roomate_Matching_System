@@ -1,1 +1,166 @@
+from openpyxl import *
+import math
+
+class Person:
+    def __init__(self,name,get_up_time,imp_get_up,sleep_time,imp_sleep,regular,imp_regular,bath,imp_bath,
+                 wash_clothes,imp_wash,out_sound,imp_outsound,heavy_taste_food,imp_heavy_tasete,clean_frequency,
+                 imp_clean_frequency,clean_together,imp_clean,tell_first,imp_tell,electric_fee,imp_electric,
+                 tem_airconditioner,imp_tem):
+        '''a person's information.'''
+        self.name=name
+        self.get_up_time=get_up_time
+        self.imp_get_up=imp_get_up
+        self.sleep_time=sleep_time
+        self.imp_sleep=imp_sleep
+        self.regular=regular
+        self.imp_regular=imp_regular
+        self.bath=bath
+        self.imp_bath=imp_bath
+        self.wash_clothes=wash_clothes
+        self.imp_wash=imp_wash
+        self.out_sound=out_sound
+        self.imp_outsound=imp_outsound
+        self.heavy_taste_food=heavy_taste_food
+        self.imp_heavy_taste=imp_heavy_tasete
+        self.clean_frequency=clean_frequency
+        self.imp_clean_frequency=imp_clean_frequency
+        self.clean_together=clean_together
+        self.imp_clean=imp_clean
+        self.tell_first=tell_first
+        self.imp_tell=imp_tell
+        self.electric_fee=electric_fee
+        self.imp_electric=imp_electric
+        self.tem_airconditioner=tem_airconditioner
+        self.imp_tem=imp_tem
+
+
+excel=load_workbook('舍友匹配统计.xlsx')
+sheet1=excel['男生']
+
+
+def createPerson(sheet,numofPerson=2,endofPerson=3,personList=[]):
+    onePerson=[]
+    if numofPerson > endofPerson:
+        return personList
+
+    else:
+        for row in sheet.iter_rows(min_col=1,max_col=25,min_row=numofPerson,max_row=numofPerson):
+            for v in row:
+                onePerson.append(v.value)
+
+        person=Person(onePerson[0],onePerson[1],onePerson[2],onePerson[3],onePerson[4],onePerson[5],
+                      onePerson[6],onePerson[7],onePerson[8],onePerson[9],onePerson[10],onePerson[11],
+                      onePerson[12],onePerson[13],onePerson[14],onePerson[15],onePerson[16],onePerson[17],
+                      onePerson[18],onePerson[19],onePerson[20],onePerson[21],onePerson[22],onePerson[23],
+                      onePerson[24])
+        personList.append(person)
+        numofPerson+=1
+        return createPerson(sheet,numofPerson,endofPerson,personList)
+
+
+
+def score_get_up(person1,person2):
+    num1=(float(person1.get_up_time)-math.floor(float(person1.get_up_time)))/0.6+math.floor(float(person1.get_up_time))
+    num2=(float(person2.get_up_time)-math.floor(float(person2.get_up_time)))/0.6+math.floor(float(person2.get_up_time))
+    if abs(num1-num2) <= 0.5:
+        return 100
+    elif  0.5 < abs(num1-num2) <= 1:
+        return 50
+    else:
+        return 0
+
+def score_sleep(person1,person2):
+    num1=(float(person1.sleep_time)-math.floor(float(person1.sleep_time)))/0.6+math.floor(float(person1.sleep_time))
+    num2=(float(person2.sleep_time)-math.floor(float(person2.sleep_time)))/0.6+math.floor(float(person2.sleep_time))
+    if abs(num1-num2) <= 0.5:
+        return 100
+    elif  0.5 < abs(num1-num2) <= 1:
+        return 50
+    else:
+        return 0
+
+def score_regular(person1,person2):
+    if person1.regular == person2.regular:
+        return 50
+    else:
+        return 0
+
+def score_bath(person1,person2):
+    if person1.bath == person2.bath:
+        return 50
+    else:
+        return 0
+
+def score_wash_clothes(person1,person2):
+    if person1.wash_clothes == person2.wash_clothes:
+        return 50
+    else:
+        return 0
+
+def score_outsound(person1,person2):
+    if person1.out_sound == person2.out_sound:
+        return 50
+    else:
+        return 0
+
+def score_heavy_food(person1,person2):
+    if person1.heavy_taste_food == person2.heavy_taste_food:
+        return 50
+    else:
+        return 0
+
+def score_clean(person1,person2):
+    if person1.clean_frequency == person2.clean_frequency:
+        return 50
+    else:
+        return 0
+
+def score_clean_together(person1,person2):
+    if person1.clean_together == person2.clean_together:
+        return 50
+    else:
+        return 0
+
+def score_tell_first(person1,person2):
+    if person1.tell_first == person2.tell_first:
+        return 50
+    else:
+        return 0
+
+def score_electric_fee(person1,person2):
+    if person1.electric_fee == person2.electric_fee:
+        return 50
+    else:
+        return 0
+
+def score_tem_airconditioner(person1,person2):
+    if person1.tem_airconditioner == person2.tem_airconditioner:
+        return 50
+    else:
+        return 0
+
+def sum_up_score(personList):
+    allscore=[]
+
+    for i in range(len(personList)):
+        onescore=[]
+        for j in range(len(personList)):
+            score=(score_get_up(personList[i],personList[j])*float(personList[i].imp_get_up)+score_sleep(personList[i],personList[j])*float(personList[i].imp_sleep)
+                  +score_regular(personList[i],personList[j])*float(personList[i].imp_regular)+score_bath(personList[i],personList[j])*float(personList[i].imp_bath)
+                  +score_wash_clothes(personList[i],personList[j])*float(personList[i].imp_wash)+score_outsound(personList[i],personList[j])*float(personList[i].imp_outsound)
+                  +score_heavy_food(personList[i],personList[j])*float(personList[i].imp_heavy_taste)+score_clean(personList[i],personList[j])*float(personList[i].imp_clean_frequency)
+                  +score_clean_together(personList[i],personList[j])*float(personList[i].imp_clean)+score_tell_first(personList[i],personList[j])*float(personList[i].imp_tell)
+                  +score_electric_fee(personList[i],personList[j])*float(personList[i].imp_electric)+score_tem_airconditioner(personList[i],personList[j])*float(personList[i].imp_tem))
+            onescore.append(score)
+        allscore.append(onescore)
+
+    return allscore
+
+
+
+excel=load_workbook('舍友匹配统计.xlsx')
+sheet1=excel['男生']
+a=createPerson(sheet1)
+b=sum_up_score(a)
+print(b)
 
