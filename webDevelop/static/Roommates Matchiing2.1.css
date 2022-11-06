@@ -1,0 +1,134 @@
+/* 网页底色 */
+html,
+body {
+    height: 100%;
+    background-color: #333;
+}
+body {
+    color: #fff;
+    text-align: center;
+}
+/*上面线条 */
+.top {
+    margin-top: 100px;
+}
+/* 最底层格子属性（覆盖整个页面） */
+.a {
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    box-shadow: inset 0 0 100px rgb(0 0 0 / 50%);
+}
+/* 最上层格子的属性 */
+.a1 {
+    width: 700px;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+/* Question的属性 */
+.a11 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 导航栏属性 */
+.a12 {
+    width: 674px;
+    height: 44.85px;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* 中间格子属性（问卷问题放置处） */
+.a2 {
+    width: 700px;
+    height: 1600px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+/* 问题框 */
+.questionBox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 确认框 */
+.confirmBox {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* 按键框 */
+.key {
+    width: 500px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+/* 选项框 */
+.inKey {
+    width: 100px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #333;
+    border:1px solid #fff;
+}
+
+/* 选项触摸属性 */
+.inKey:focus {
+    color: #333;
+    background-color: #fff;
+}
+
+.inKey:hover {
+    cursor: pointer;
+    color: #333;
+    background-color: #fff;
+}
+
+/* 最下层格子属性 */
+.a3 {
+    width: 700px;
+    height: 90px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+/* 最下层格子文字属性 */
+.a31 {
+    color: #999;
+}
+.p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/* 链接（按钮）的颜色 */
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+/* 按钮按下的下划线效果 */
+}
+a:hover{
+text-decoration: underline;
+}
