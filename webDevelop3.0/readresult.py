@@ -1,6 +1,6 @@
 import xlrd
-#install xlrd 1.2.0
-#导入需要读取Excel表格的路径
+#install xlrd 1.2.0 才能用
+#导入需要读取Excel表格的路径，请确保路径正确
 
 data = xlrd.open_workbook(r'C:\Users\31684\Desktop\roommates matching.xlsx ')
 
