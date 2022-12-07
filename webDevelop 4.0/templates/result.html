@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+</head>
+<link rel="stylesheet" href="../static/showingPage2.0.css">
+<script type="text/javascript">
+ var users =[{'roommate1': 'O', 'roommate2': 'N'}, {'roommate1': 'B', 'roommate2': 'A'}, {'roommate1': 'G', 'roommate2': 'E'}, {'roommate1': 'L', 'roommate2': 'D'}, {'roommate1': 'P', 'roommate2': 'R'}, {'roommate1': 'Q', 'roommate2': 'M'}, {'roommate1': 'K', 'roommate2': 'J'}, {'roommate1': 'C', 'roommate2': 'I'}, {'roommate1': 'T', 'roommate2': 'F'}, {'roommate1': 'H', 'roommate2': 'S'}]
+function fill() { //填充默认
+    var table=document.getElementById("newtable")//获取html中table
+    for (var i in users) { //遍历数组
+        show_result(i,table);
+    }
+}
+
+function show_result(a,table) { //传入当前数组的下标及需要输出的表格，显示信息在表格某一行
+    let newRow = table.insertRow(); //新建一行
+    let cellName = newRow.insertCell();
+    let cellcode = newRow.insertCell();
+    let cellwplace = newRow.insertCell();
+
+
+    cellName.innerHTML = parseInt(a)+1; //对应一行的第一格
+    cellcode.innerHTML = users[a].roommate1; //对应一行的第二格
+    cellwplace.innerHTML = users[a].roommate2;//对应一行的第三格
+
+
+    //每行最后添加一个删除按钮，当点击它时调用Delete(this)函数
+
+}
+
+</script><!--导入test.js文件-->
+<body onload="fill()"><!--默认自动调用函数-->
+
+  <table id = "newtable" border = 1><!--设置边框宽度为1-->
+      <tr><!--新建一行-->
+          <td><font  id ="AName">#</font></td>
+          <td><font  id="ACode">member1</font></td>
+          <td><font  id="ACname">member2</font></td>
+      </tr>
+  </table>
+<p>back to the home page<a href="home.html"> click me</a>, by <a href="#"> Team2</a>.</p>
+</body>
+</html>

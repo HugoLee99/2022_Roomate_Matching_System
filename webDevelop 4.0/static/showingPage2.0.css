@@ -1,0 +1,96 @@
+/* 网页底色 */
+html,
+body {
+    height: 100%;
+    background-color: #333;
+}
+body {
+    color: #fff;
+    text-align: center;
+}
+
+/* 链接（按钮）的颜色 */
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+/* 按钮按下的下划线效果 */
+}
+a:hover{
+text-decoration: underline;
+}
+
+.text {
+    font-size: 18px;
+}
+
+/* 最底层格子属性（覆盖整个页面） */
+.a {
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    box-shadow: inset 0 0 100px rgb(0 0 0 / 50%);
+}
+/* 最上层格子的属性 */
+.a1 {
+    width: 700px;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+}
+
+/* Matching Result的属性 */
+.a11 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 导航栏属性 */
+.a12 {
+    width: 674px;
+    height: 44.85px;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    border-bottom: #32383e;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+th {
+    text-align: inherit;
+}
+
+table {
+    width: 700px;
+    height: 100px;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* 最下层格子属性 */
+.a3 {
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}

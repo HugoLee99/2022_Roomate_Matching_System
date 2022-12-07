@@ -1,0 +1,33 @@
+.table .thead-dark th {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 10px solid #dee2e6;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+th {
+    text-align: inherit;
+}
+
+th {
+    text-align: inherit;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+}
+
