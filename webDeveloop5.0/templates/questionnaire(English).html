@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questionnaire</title>
+    <link rel="stylesheet" href="../static/question.css">
+</head>
+<style>
+    p input {
+        height: 20px;
+        width: 50px;
+    }
+
+</style>
+<body>
+<div class="a">
+    <div class="a1">
+        <h3 class="a11">Questions</h3>
+        <nav class="a12">
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="questionnaire.html">简体中文</a>
+            </li>
+        </nav>
+    </div>
+    <div class="a2">
+        <form action="complete.html" method="post" name="f" id="form1" onsubmit="return checkForm(this)">
+            <div class="questionBox">
+                <div class="key">
+                    1.Please enter your full name：
+                </div>
+                <div class="key">
+                    </label><input type="text" name="name">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    2.Please enter your gender：
+                </div>
+                <div class="key">
+                    <label for="2.1">Male</label><input type="radio" value="Male" name="gender" id="2.1">
+                </div>
+                <div class="key">
+                    <label for="2.2">Female</label><input type="radio" value="Female" name="gender" id="2.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    3.What is your routine：
+                </div>
+                <div class="key">
+                    <label for="3.1">go to bed early and get up early</label><input type="radio" value="go to bed early and get up early" name="zuoxi" id="3.1">
+                </div>
+                <div class="key">
+                    <label for="3.2">Go to bed early and get up late</label><input type="radio" value="Go to bed early and get up late" name="zuoxi" id="3.2">
+                </div>
+                <div class="key">
+                    <label for="3.3">Go to bed late and get up early</label><input type="radio" value="Go to bed late and get up early" name="zuoxi" id="3.3">
+                </div>
+                <div class="key">
+                    <label for="3.4">Go to bed late and get up late</label><input type="radio" value="Go to bed late and get up late" name="zuoxi" id="3.4">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    4.What is your social status:
+                </div>
+                <div class="key">
+                    <label for="4.1">Social excellence</label><input type="radio" value="Social excellence" name="shejiao" id="4.1">
+                </div>
+                <div class="key">
+                    <label for="4.2">Social phobia</label><input type="radio" value="Social phobia" name="shejiao" id="4.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    5.Are you a neat freak?
+                </div>
+                <div class="key">
+                    <label for="5.1">Yes</label><input type="radio" value="Yes" name="jiepi" id="5.1">
+                </div>
+                <div class="key">
+                    <label for="5.2">No</label><input type="radio" value="No" name="jiepi" id="5.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    6.Do you shower every day?
+                </div>
+                <div class="key">
+                    <label for="6.1">Yes</label><input type="radio" value="Yes" name="xizao" id="6.1">
+                </div>
+                <div class="key">
+                    <label for="6.2">No</label><input type="radio" value="No" name="xizao" id="6.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    7.Do you do laundry every day?
+                </div>
+                <div class="key">
+                    <label for="7.1">Yes</label><input type="radio" value="Yes" name="yifu" id="7.1">
+                </div>
+                <div class="key">
+                    <label for="7.2">No</label><input type="radio" value="No" name="yifu" id="7.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    8.How often do you think the dormitory should be cleaned?
+                </div>
+                <div class="key">
+                    <label for="8.1">once a day</label><input type="radio" value="once a day" name="weisheng" id="8.1">
+                </div>
+                <div class="key">
+                    <label for="8.2">once a week</label><input type="radio" value="once a week" name="weisheng" id="8.2">
+                </div>
+                <div class="key">
+                    <label for="8.3">More than a month</label><input type="radio" value="More than a month" name="weisheng" id="8.3">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    9.Can you accept smelly food such as durian and snail lion powder?
+                </div>
+                <div class="key">
+                    <label for="9.1">Yes</label><input type="radio" value="Yes" name="ciji" id="9.1">
+                </div>
+                <div class="key">
+                    <label for="9.2">No</label><input type="radio" value="No" name="ciji" id="9.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    10.Do you often play video games late into the night?
+                </div>
+                <div class="key">
+                    <label for="10.1">Yes</label><input type="radio" value="Yes" name="youxi" id="10.1">
+                </div>
+                <div class="key">
+                    <label for="10.2">Yes</label><input type="radio" value="Yes" name="youxi" id="10.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    11.Can you tolerate your roommantes play the sound in Loudspeaker Mode in the dormitory?
+                </div>
+                <div class="key">
+                    <label for="11.1">Yes</label><input type="radio" value="Yes" name="shengyin" id="11.1">
+                </div>
+                <div class="key">
+                    <label for="11.2">No</label><input type="radio" value="No" name="shengyin" id="11.2">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    12.What do you think is the comfortable air conditioning temperature in summer?
+                </div>
+                <div class="key">
+                    <label for="12.1">Above 26 degrees</label><input type="radio" value="Above 26 degrees" name="kongtiao" id="12.1">
+                </div>
+                <div class="key">
+                    <label for="12.2">Less than 22 degrees</label><input type="radio" value="Less than 22 degrees" name="kongtiao" id="12.2">
+                </div>
+                <div class="key">
+                    <label for="12.3">Above 22 degrees, below 26 degrees</label><input type="radio" value="Above 22 degrees, below 26 degrees" name="kongtiao" id="12.3">
+                </div>
+            </div>
+            <div class="questionBox">
+                <div class="key">
+                    13.What kind of interests do you have?
+                </div>
+                <div class="key">
+                    <label for="13.1">Quiet type (reading, drawing, etc.)</label><input type="radio" value="Quiet type (reading, drawing, etc.)" name="xingqu" id="13.1">
+                </div>
+                <div class="key">
+                    <label for="13.2">Eccentric type (sports, etc.)</label><input type="radio" value="Eccentric type (sports, etc.)" name="xingqu" id="13.2">
+                </div>
+            </div>
+            <div class="topic2">Which of the following aspects do you care more about:(The degree of recognition increases from 1 to 15, the default recognition degree is 8, the total score needs to be 100)</div>
+            <div style="clear:both"></div>
+            <div class="questionBox">
+                <p>Work and rest schedule <input name="v3" type="text" value="8" id="15.3"></p><!-- 3-->
+                <p>Social status<input name="v4" type="text" value="8" id="15.4"></p>  <!-- 4-->
+                <p>The degree of cleanliness obsession<input name="v5" type="text" value="8" id="15.5"></p><!-- 5-->
+                <p>personal hygiene <input name="v6" type="text" value="8" id="15.6"></p> <!-- 6-7-->
+                <p>dormitory hygiene<input name="v8" type="text" value="8" id="15.8"></p> <!-- 8-->
+                <p>stimulating-smell food<input name="v9" type="text" value="8" id="15.9"></p><!-- 9-->
+                <p>video games<input name="v10" type="text" value="8" id="15.10"></p> <!-- 10-->
+                <p>Loudspeaker Mode<input name="v11" type="text" value="8" id="15.11"></p> <!-- 11-->
+                <p>Air conditioning temperature in summer<input name="v12" type="text" value="8" id="15.12"></p> <!-- 12-->
+                <p>hobbies and interests<input name="v13" type="text" value="8" id="15.13"></p><!-- 13-->
+
+            </div>
+
+
+            <div class="confirmBox">
+                <div class="key">
+                    <input type="reset" value="reset" class="inKey">
+                </div>
+                <div class="key">
+                    <input type="submit" value="submit" class="inKey">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="a3">
+        <div class="a31">
+            <p>to learn more<a href="../templates/feature.html"> click me</a>, by <a href="Contact.html"> Team2</a>.</p>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function checkForm()
+    {
+
+        var v3 = parseInt(document.getElementById("15.3").value);
+        var v4 = parseInt(document.getElementById("15.4").value);
+        var v5 = parseInt(document.getElementById("15.5").value);
+        var v6 = parseInt(document.getElementById("15.6").value);
+        var v8 = parseInt(document.getElementById("15.8").value);
+        var v9 = parseInt(document.getElementById("15.9").value);
+        var v10 = parseInt(document.getElementById("15.10").value);
+        var v11 = parseInt(document.getElementById("15.11").value);
+        var v12 = parseInt(document.getElementById("15.12").value);
+        var v13 = parseInt(document.getElementById("15.13").value);
+
+        var estr = ""
+        var total = v3+v4+v5+v6+v8+v9+v10+v11+v12+v13
+        estr += "Total weight:" + total + "\n"
+    if (v3+v4+v5+v6+v8+v9+v10+v11+v12+v13===100) {
+        estr += "pass";
+        alert(estr);
+        return true
+    } else{
+        estr += "The total weight needs to be 100";
+        alert(estr);
+        return false
+    }}
+
+</script>
+
+<script language="JavaScript">
+    //Declare a commit method
+    function tijiao() {
+        //1 full name
+        var namevalue = f.name.value;
+        //2 gender
+        var gendervalue = f.gender.value;
+        //3 rest schedule
+        var zuoxi = f.zuoxi.value;
+        //4 social contact
+        var shejiaovalue = f.shejiao.value;
+        //5 mysophobia
+        var jiepivalue = f.jiepi.value;
+        //6 take a bath
+        var xizaovalue = f.xizao.value;
+        //7 do the laundry
+        var yifuvalue = f.yifu.value;
+        //8 sanitation
+        var weisheng= f.weisheng.value;
+        //9 Stimulating Food
+        var cijivalue=f.ciji.value;
+        //10 video games
+        var youxivalue = f.youxi.value;
+        //11 sound
+        var shengyinvalue=f.shengyin.value;
+        //12 Air conditioning
+        var kongtiaovalue=f.kongtiao.value;
+        //13 hobbies and interests
+        var xingquvalue=f.xingqu.value;
+
+        // degree of recognition
+
+
+        var v3 = f.v3.value;
+        var v4 = f.v4.value;
+        var v5 = f.v5.value;
+        var v6 = f.v6.value;
+        var v8 = f.v8.value;
+        var v9 = f.v9.value;
+        var v10 = f.v10.value;
+        var v11 = f.v11.value;
+        var v12 = f.v12.value;
+        var v12 = f.v12.value;
+        var v13 = f.v13.value;
+
+
+        //Once each value is obtained, it is passed through the framework
+        //The XMLHttpRequest object is passed through the framework to exchange data with the server in the background
+
+        url = 'http://127.0.0.1:5000/questionnaire'
+        var request = new XMLHttpRequest()
+        request.open('post', url, true)
+        request.onload = function () {
+            resp_text = request.responseText
+            print(resp_text)
+        }
+        var formdata = new FormData()
+        formdata.append('name', namevalue)
+        formdata.append('gender', gendervalue)
+        formdata.append('zuoxi', zuoxivalue)
+        formdata.append('shejiao', shejiaovalue)
+        formdata.append('jiepi', jiepivalue)
+        formdata.append('xizao', xizaovalue)
+        formdata.append('yifu', yifuvalue)
+        formdata.append('ciji', cijivalue)
+        formdata.append('weisheng', weishengvalue)
+        formdata.append('youxi', youxivalue)
+        formdata.append('shengyin', shengyinvalue)
+        formdata.append('kongtiao', kongtiaovalue)
+        formdata.append('xingqu', xingquvalue)
+
+
+        formdata.append('v3', v3)
+        formdata.append('v4', v4)
+        formdata.append('v5', v5)
+        formdata.append('v6', v6)
+        formdata.append('v8', v8)
+        formdata.append('v9', v9)
+        formdata.append('v10', v10)
+        formdata.append('v11', v11)
+        formdata.append('v12', v12)
+        formdata.append('v13', v13)
+
+
+
+        request.send(formdata)
+
+    }
+</script>
+
+
+</body>
+</html>
