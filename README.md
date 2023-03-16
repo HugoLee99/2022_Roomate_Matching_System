@@ -1,2 +1,2 @@
-# team-work-project
-这是我们软件工程小组项目讨论库
+Our project aims to provide a web page which can have the ability of matching the roommates for the customers.
+It will be very helpful when the freshmen enter the college because it will provide them a platform to get a relatively suitable roommate!
